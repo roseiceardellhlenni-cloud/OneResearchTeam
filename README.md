@@ -143,7 +143,7 @@ OneResearchTeam/
 > OneResearchTeam 将 OneManCompany 的 AI 团队管理框架迁移至科研场景，构建一个由 PI、文献研究员、实验设计师、数据分析师和论文写作专家组成的 AI 科研团队，实现从文献调研→实验设计→数据分析→论文撰写的全流程自动化协作。
 >
 > **核心技术**：
-> - 基于 Xiaomi MiMo 大模型的多 Agent 协作系统
+> - 基于多 Agent 协作系统的科研团队管理框架
 > - 集成 Nature Skills（scansci-pdf、Zotero MCP）进行文献管理
 > - 参照真实实验室管理流程设计角色职责与晋升体系
 > - 内置科研工作流引擎，支持多课题并行管理
