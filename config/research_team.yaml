@@ -1,0 +1,141 @@
+# 科研团队配置
+
+team:
+  name: "一人科研团队"
+  tagline: "AI驱动的全职能科研团队"
+  owner: "Human PI (Chief Scientist)"
+
+  # 五大角色定义
+roles:
+  - id: "PI"
+    title: "首席科学家 (PI)"
+    description: "把握方向、审批方案、对结果负责"
+    level: 5
+    skills:
+      - scientific_direction
+      - protocol_approval
+      - manuscript_review
+
+  - id: "LR"
+    title: "文献研究员 (Literature Researcher)"
+    description: "文献检索、管理、分析"
+    level: 1
+    skills:
+      - literature_search
+      - zotero_management
+      - paper_download
+      - critical_appraisal
+
+  - id: "ED"
+    title: "实验设计师 (Experiment Designer)"
+    description: "实验方案设计、SOP制定"
+    level: 1
+    skills:
+      - experiment_design
+      - sop_drafting
+      - ethics_application
+      - power_analysis
+
+  - id: "DA"
+    title: "数据分析师 (Data Analyst)"
+    description: "统计分析、图表制作、质控"
+    level: 1
+    skills:
+      - statistical_analysis
+      - data_visualization
+      - quality_control
+      - python_r
+
+  - id: "WS"
+    title: "论文写作专家 (Writing Specialist)"
+    description: "SCI论文撰写、润色、投稿"
+    level: 1
+    skills:
+      - manuscript_writing
+      - language_polishing
+      - journal_selection
+      - cover_letter
+
+# 科研流程配置
+research_flow:
+  phases:
+    - name: "literature_review"
+      display: "文献调研"
+      roles: ["LR"]
+      next_roles: ["ED"]
+
+    - name: "experiment_design"
+      display: "实验方案设计"
+      roles: ["ED", "PI"]
+      requires_approval: true
+      next_roles: ["DA"]
+
+    - name: "data_collection"
+      display: "数据采集"
+      roles: ["ED"]
+      next_roles: ["DA"]
+
+    - name: "data_analysis"
+      display: "数据分析"
+      roles: ["DA", "PI"]
+      requires_approval: true
+      next_roles: ["WS"]
+
+    - name: "manuscript_prep"
+      display: "论文撰写"
+      roles: ["WS", "PI"]
+      requires_approval: true
+      next_roles: []
+
+    - name: "peer_review"
+      display: "同行评审"
+      roles: ["WS"]
+      next_roles: ["WS"]
+
+    - name: "revision"
+      display: "修订"
+      roles: ["WS", "PI"]
+      requires_approval: true
+      next_roles: []
+
+    - name: "submitted"
+      display: "已投稿"
+      roles: []
+      next_roles: []
+
+    - name: "published"
+      display: "已发表"
+      roles: []
+      next_roles: []
+
+# 内置工具（Nature Skills）
+tools:
+  literature:
+    - name: "OpenAlex API"
+      description: "学术文献检索"
+      enabled: true
+    - name: "PubMed API"
+      description: "生物医学文献检索"
+      enabled: true
+    - name: "scansci-pdf"
+      description: "论文下载与管理"
+      enabled: true
+    - name: "Zotero MCP"
+      description: "文献库管理"
+      enabled: true
+
+  data:
+    - name: "Python"
+      description: "数据分析与可视化"
+      enabled: true
+    - name: "GraphPad Prism"
+      description: "学术统计图表"
+      enabled: false
+
+# 工作目录
+workspace:
+  root: "company/"
+  projects_subdir: "projects/"
+  literature_subdir: "literature/"
+  data_subdir: "data/"
+  manuscripts_subdir: "manuscripts/"
