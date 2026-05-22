@@ -68,7 +68,7 @@ OneResearchTeam/
 ├── config/
 │   └── research_team.yaml  # 团队配置
 ├── docs/
-│   ├── project_description.md  # MiMo申请用项目描述
+│   ├── project_description.md  # 项目申请描述文档
 │   └── research_protocols.md   # 标准操作规程
 └── assets/
     ├── roles/            # 角色定义文档
@@ -135,7 +135,7 @@ OneResearchTeam/
 
 ---
 
-## 项目申请描述（用于 MiMo Orbit 申请）
+## 项目申请描述
 
 > **项目名称**：OneResearchTeam — AI驱动的全职能科研团队管理系统
 >
